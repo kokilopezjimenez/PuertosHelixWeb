@@ -290,26 +290,34 @@
 					+ ":8080/Palito.jpg" + "\" width=\"8\" height=\"55\"/></td>";
 			Salida = Salida + "</tr>";
 		}
+		
+		
+		Salida = Salida + "<tr>";
+		Salida = Salida + "<td colspan=\"8\"><img src=\"" + "http://" + ip + ":8080/AbajoUsuarios.jpg"
+				+ "\" width=\"1221\" height=\"21\" alt=\"\"/></td>";
+		Salida = Salida + "</tr>";
+		Salida = Salida + "</tbody>";
+		Salida = Salida + "</table>";
+		Salida = Salida
+				+ "<p><img src=\"http://10.129.47.109:8080/Footer.jpg\" width=\"1096\" height=\"150\" id=\"eleccion\"></p>";
+		Salida = Salida + "</center>";
+		//Salida= Salida+SqlStr;
+		Salida = Salida + "</body>";
+		Salida = Salida + "</html>";
+
+		out.println(Salida);
+		
 
 	} catch (SQLException e) {
 		// TODO Auto-generated catch block
+		conn.close();
 		e.printStackTrace();
 	}
-
-	Salida = Salida + "<tr>";
-	Salida = Salida + "<td colspan=\"8\"><img src=\"" + "http://" + ip + ":8080/AbajoUsuarios.jpg"
-			+ "\" width=\"1221\" height=\"21\" alt=\"\"/></td>";
-	Salida = Salida + "</tr>";
-	Salida = Salida + "</tbody>";
-	Salida = Salida + "</table>";
-	Salida = Salida
-			+ "<p><img src=\"http://10.129.47.109:8080/Footer.jpg\" width=\"1096\" height=\"150\" id=\"eleccion\"></p>";
-	Salida = Salida + "</center>";
-	//Salida= Salida+SqlStr;
-	Salida = Salida + "</body>";
-	Salida = Salida + "</html>";
-
-	out.println(Salida);
+	
+	finally{
+	 conn.close();
+	}
+	
 %>
 
 
